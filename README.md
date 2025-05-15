@@ -23,16 +23,16 @@ This repository demonstrates a full-stack application for **document classificat
 
 
 2. Install Python requirements:
-```bash
+   ```bash
    pip install -r backend/requirements.txt
 
 3. Initialize the SQLite database (this creates the tables):
-```bash
+   ```bash
    cd backend
    python main.py --init-db
 
 4. Run FastAPI (development server):
-```bash
+   ```bash
    uvicorn main:app --reload
 
 The backend is now running at http://localhost:8000.
@@ -42,16 +42,17 @@ The backend is now running at http://localhost:8000.
 1. Open a new terminal window (keeping the backend running in the old one).
 
 2. Navigate to frontend folder:
-```bash
+   ```bash
    cd frontend
 
 3. Install dependencies:
-```bash
+   ```bash
    npm install
 
-4.Start the development server:
-```bash
+4. Start the development server:
+   ```bash
    npm run dev
+
 
 The frontend is now running at http://localhost:5173 (Vite default) or http://localhost:3000 if create-react-app.
 
@@ -61,9 +62,9 @@ The frontend is now running at http://localhost:5173 (Vite default) or http://lo
 2. Use the Upload Form to upload an image or PDF.
 
 3. The app calls the FastAPI /extract endpoint, which:
-- Classifies the document as Passport, Driver License, or EAD (stub logic in this example).
-- Extracts dummy fields (or uses OCR + LLM if you integrate real logic).
-- Saves extraction results in the SQLite DB.
+   - Classifies the document as Passport, Driver License, or EAD (stub logic in this example).
+   - Extracts dummy fields (or uses OCR + LLM if you integrate real logic).
+   - Saves extraction results in the SQLite DB.
 
 4. The left sidebar shows recent extractions pulled from the DB. Click one to view/edit.
 
