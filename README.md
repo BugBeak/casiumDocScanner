@@ -18,11 +18,10 @@ This repository demonstrates a full-stack application for **document classificat
    ```bash
    python -m venv .venv
    source .venv/bin/activate  # Mac/Linux
-   .venv\Scripts\activate     # Windows
+   .\.venv\bin\Activate.ps1     # Windows (powershell)
+   
 
-
-
-2. Install Python requirements:
+2. Install Python requirements (in backend folder):
    ```bash
    pip install -r backend/requirements.txt
 
