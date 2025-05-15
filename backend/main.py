@@ -4,9 +4,9 @@ import sys
 from fastapi import FastAPI, File, UploadFile, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from .database import engine, get_db
-from .models import Base
-from . import crud, schemas
+from database import engine, get_db
+from models import Base
+import crud, schemas
 
 app = FastAPI()
 
