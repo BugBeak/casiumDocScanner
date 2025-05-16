@@ -1,7 +1,7 @@
 # backend/crud.py
 
 from sqlalchemy.orm import Session
-from . import models, schemas
+import models, schemas
 
 def create_extraction(db: Session, doc_type: str, fields: dict):
     db_extraction = models.DocumentExtraction(

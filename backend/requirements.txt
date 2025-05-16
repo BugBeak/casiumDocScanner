@@ -3,3 +3,12 @@ uvicorn==0.22.0
 sqlalchemy==2.0.10
 pydantic==1.10.7
 python-multipart==0.0.5
+
+transformers==4.29.1
+torch==2.0.1
+torchvision==0.15.2
+
+
+pillow==9.5.0
+pytesseract==0.3.10
+pdf2image==1.16.3   # optional, only if you want to handle PDFs
