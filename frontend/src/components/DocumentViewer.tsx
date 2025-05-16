@@ -1,23 +1,34 @@
 import React from "react";
 
 interface Props {
-  extractionId: number | null;
+  previewUrl: string;
 }
 
-export default function DocumentViewer({ extractionId }: Props) {
-  if (!extractionId) {
-    return <div>Select a document from the list to view.</div>;
+export default function DocumentViewer({ previewUrl }: Props) {
+  // If there's no preview URL, it means either we haven't selected a file,
+  // or we're looking at an older extraction that has no stored file.
+  if (!previewUrl) {
+    return <div>No document selected or no preview available.</div>;
   }
 
-  // In a real app, you might fetch the actual file or a link to display here.
-  // For now, show a placeholder text or a placeholder image.
+  // Naive PDF vs. image detection by file extension or MIME type
+  const isPdf = previewUrl.toLowerCase().includes(".pdf");
 
   return (
-    <div>
-      <p>Document ID: {extractionId}</p>
-      <div style={{ border: "1px solid #999", padding: "1rem" }}>
-        <em>Placeholder for original document preview (PDF/image)</em>
-      </div>
+    <div style={{ width: "100%", overflow: "auto" }}>
+      {isPdf ? (
+        <iframe
+          src={previewUrl}
+          title="PDF Preview"
+          style={{ width: "100%", height: "600px" }}
+        />
+      ) : (
+        <img
+          src={previewUrl}
+          alt="Document Preview"
+          style={{ maxWidth: "100%", height: "auto" }}
+        />
+      )}
     </div>
   );
 }
